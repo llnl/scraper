@@ -34,7 +34,7 @@ dependencies = [
     "python-gitlab>=1.6.0",
     "pytz>=2017.3",
     "requests>=2.16",
-    "setuptools>=24.2.0",
+    "setuptools>=24.2.0,<81",
     "stashy>=0.3",
     "vsts>=0.1.25",
 ]
