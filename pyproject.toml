@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "llnl-scraper"
-version = "0.16.0"
+version = "0.16.1"
 description = "Package for extracting software repository metadata"
 readme = "README.md"
 requires-python = ">=3.8"
