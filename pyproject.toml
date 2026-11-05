@@ -1,5 +1,8 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+# 77.0.0 was the first version of setuptools to support license
+# expressions (in compliance with PEP 639):
+# https://setuptools.pypa.io/en/stable/history.html#v77-0-0
+requires = ["setuptools>=77.0.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -9,7 +12,7 @@ description = "Package for extracting software repository metadata"
 readme = "README.md"
 requires-python = ">=3.8"
 authors = [{ name = "Ian Lee", email = "lee1001@llnl.gov" }]
-license = { text = "MIT" }
+license = "MIT"
 keywords = []
 classifiers = [
     "Development Status :: 4 - Beta",
