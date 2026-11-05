@@ -28,6 +28,7 @@ classifiers = [
     "Programming Language :: Python :: Implementation :: PyPy",
 ]
 dependencies = [
+    "azure-devops>=7.1.0b4",
     "github3.py>=2.0.0",
     "msrest>=0.6.4",
     "python-dateutil>=2.7.3",
@@ -36,7 +37,6 @@ dependencies = [
     "requests>=2.16",
     "setuptools>=24.2.0,<81",
     "stashy>=0.3",
-    "vsts>=0.1.25",
 ]
 
 [project.urls]
