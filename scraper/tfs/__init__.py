@@ -4,8 +4,8 @@
 import logging
 import os
 
-from msrest.authentication import BasicAuthentication
 from azure.devops.connection import Connection
+from msrest.authentication import BasicAuthentication
 
 from scraper.tfs.models import TFSProject
 
