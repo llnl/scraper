@@ -10,7 +10,7 @@ name = "llnl-scraper"
 version = "0.16.1"
 description = "Package for extracting software repository metadata"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 authors = [{ name = "Ian Lee", email = "lee1001@llnl.gov" }]
 license = "MIT"
 keywords = []
@@ -21,7 +21,6 @@ classifiers = [
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
