@@ -4,8 +4,8 @@
 import logging
 import os
 
+from azure.devops.connection import Connection
 from msrest.authentication import BasicAuthentication
-from vsts.vss_connection import VssConnection
 
 from scraper.tfs.models import TFSProject
 
@@ -27,7 +27,7 @@ def create_tfs_connection(url, token):
         token = os.environ.get("TFS_API_TOKEN", None)
 
     tfs_credentials = BasicAuthentication("", token)
-    tfs_connection = VssConnection(base_url=url, creds=tfs_credentials)
+    tfs_connection = Connection(base_url=url, creds=tfs_credentials)
     return tfs_connection
 
 
@@ -43,9 +43,7 @@ def create_tfs_project_analysis_client(url, token=None):
         token = os.environ.get("TFS_API_TOKEN", None)
 
     tfs_connection = create_tfs_connection(url, token)
-    project_analysis_client = tfs_connection.get_client(
-        "vsts.project_analysis.v4_1.project_analysis_client.ProjectAnalysisClient"
-    )
+    project_analysis_client = tfs_connection.get_project_analysis_client()
 
     if project_analysis_client is None:
         raise RuntimeError(
@@ -66,7 +64,7 @@ def create_tfs_core_client(url, token=None):
         token = os.environ.get("TFS_API_TOKEN", None)
 
     tfs_connection = create_tfs_connection(url, token)
-    tfs_client = tfs_connection.get_client("vsts.core.v4_1.core_client.CoreClient")
+    tfs_client = tfs_connection.get_core_client()
 
     if tfs_client is None:
         raise RuntimeError(
@@ -84,7 +82,7 @@ def create_tfs_git_client(url, token=None):
         token = os.environ.get("TFS_API_TOKEN", None)
 
     tfs_connection = create_tfs_connection(url, token)
-    tfs_git_client = tfs_connection.get_client("vsts.git.v4_1.git_client.GitClient")
+    tfs_git_client = tfs_connection.get_git_client()
 
     if tfs_git_client is None:
         raise RuntimeError(
@@ -103,7 +101,7 @@ def create_tfs_tfvc_client(url, token=None):
         token = os.environ.get("TFS_API_TOKEN", None)
 
     tfs_connection = create_tfs_connection(url, token)
-    tfs_tfvc_client = tfs_connection.get_client("vsts.tfvc.v4_1.tfvc_client.TfvcClient")
+    tfs_tfvc_client = tfs_connection.get_tfvc_client()
 
     if tfs_tfvc_client is None:
         raise RuntimeError(
